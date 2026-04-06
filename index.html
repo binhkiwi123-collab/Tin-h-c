@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROUW - Tinh Hoa Đất Việt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <a href="#" class="logo">TROUW</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 Giỏ hàng (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Giỏ hàng của bạn</h2>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Giỏ hàng đang trống.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Tổng: <span id="cart-total-price">0</span> VND</div>
+            <button class="btn-primary btn-full">Thanh toán ngay</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-layout">
+                <img id="modal-img" src="" alt="Hình sản phẩm">
+                <div class="modal-info">
+                    <h2 id="modal-title">Tên sản phẩm</h2>
+                    <p class="modal-price" id="modal-price">0 VND</p>
+                    <div class="modal-desc" id="modal-desc">Mô tả...</div>
+                    <button class="btn-add" id="modal-add-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-overlay" class="overlay" onclick="closeModal()"></div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>TINH HOA ĐẤT VIỆT</h1>
+            <p>Khô lạp Trâu - Sự hòa quyện giữa hương vị truyền thống và phong cách hiện đại.</p>
+            <a href="#products" class="btn-primary">Khám phá sản phẩm</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-container">
+        <h2 class="section-title">Về Chúng Tôi</h2>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <h3 class="sub-title">Khởi đầu</h3>
+                <p>Công ty TNHH TROUW (2018) là thương hiệu Việt Nam phân phối sỉ & lẻ khô lạp trâu. "TROUW" được biến tấu từ chữ "Trâu" trong Tiếng Việt bởi sản phẩm của công ty là món ăn được làm từ thịt của loài gia súc này.</p>
+                <p>Chúng tôi nhận thấy rằng thịt trâu vẫn còn khá mới lạ đối với bạn bè quốc tế & cả người dân trong nước, vì vậy, TROUW đã sản xuất loại khô lạp đóng gói mang hương vị hài hoà đậm chất Việt có thể thưởng thức mọi nơi.</p>
+            </div>
+            <div class="about-img-container">
+                <img src="image\anh_gioi_thieu_1.jpg" alt="TROUW Logo" class="about-img">
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h3 class="sub-title text-center">Nguyên tắc hoạt động</h3>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <img src="image\Organic-Spices-blog.jpg" alt="Organic" class="principle-img">
+                <h4>Nguyên liệu Organic</h4>
+            </div>
+            <div class="principle-card">
+                <img src="image\anh_ba_mia.png" alt="Bao bì bã mía" class="principle-img">
+                <h4>Bao bì từ bã mía</h4>
+            </div>
+            <div class="principle-card">
+                <img src="image\anh_than.jpg" alt="Than hoạt tính" class="principle-img">
+                <h4>Dùng than hoạt tính từ phế phẩm</h4>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h3 class="sub-title text-center">Chiến lược kinh doanh</h3>
+        <div class="strategy-content">
+            <ul>
+                <li><strong>Đặt khách hàng làm trọng tâm:</strong> để cao dịch vụ chăm sóc khách hàng.</li>
+                <li><strong>Biến đổi theo xu hướng thị trường:</strong> bán hàng online, cập nhật những mẫu bao bì mới theo mùa (bộ sưu tập xuân, thu, đông,...).</li>
+                <li><strong>Ngân sách ổn định:</strong> Đối mặt với rủi ro thị trường.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="products" class="section-container bg-light">
+        <h2 class="section-title">Sản Phẩm</h2>
+
+        <h3 class="sub-title">Truyền thống (Gói lẻ 300g)</h3>
+        <p class="product-note">Có thể thưởng thức dưới dạng snack/món ăn kèm trong bữa cơm. <br> <em>*Gói hút chân không: 500,000 VND</em></p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="image\anh_classic.jpg" alt="Classic" class="product-img" onclick="openModal('Khô lạp Trâu - Classic', 250000, 'Gói lẻ 300g. Vị truyền thống đậm đà.', 'anh_classic.png')">
+                <h4>Classic</h4>
+                <p class="price">250,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Khô lạp Trâu - Classic', 250000, ' image/anh_classic.jpg')">Thêm vào giỏ</button>
+            </div>
+
+            <div class="product-card">
+                <img src="image\anh_phomai.jpg" alt="Phô mai" class="product-img" onclick="openModal('Khô lạp Trâu - Phô mai', 280000, 'Gói lẻ 300g. Vị phô mai béo ngậy.', 'anh_phomai.png')">
+                <h4>Phô mai</h4>
+                <p class="price">280,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Khô lạp Trâu - Phô mai', 280000, 'image/anh_phomai.jpg')">Thêm vào giỏ</button>
+            </div>
+
+            <div class="product-card">
+                <img src="image\anh_cayphomai.jpg" alt="Cay phô mai" class="product-img" onclick="openModal('Khô lạp Trâu - Cay Phô mai', 300000, 'Gói lẻ 300g. Vị cay nồng hòa quyện phô mai.', 'anh_cayphomai.png')">
+                <h4>Cay phô mai</h4>
+                <p class="price">300,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Khô lạp Trâu - Cay Phô mai', 300000, 'image\anh_cayphomai.jpg')">Thêm vào giỏ</button>
+            </div>
+
+            <div class="product-card">
+                <img src="image\anh_rongbien.jpg" alt="Rong biển" class="product-img" onclick="openModal('Khô lạp Trâu - Rong biển', 280000, 'Gói lẻ 300g. Vị rong biển thanh mát.', 'anh_rongbien.png')">
+                <h4>Rong biển</h4>
+                <p class="price">280,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Khô lạp Trâu - Rong biển', 280000, 'image/anh_rongbien.jpg')">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card">
+                <img src="image\anh_chamcheo.png" alt="Chẩm chéo" class="product-img" onclick="openModal('Nước chấm chẩm chéo', 90000, 'Chai lẻ 300ml. Vị cay nồng nàng.', 'assets/img/anh_chamcheo.png')">
+                <h4>Chẩm chéo</h4>
+                <p class="price">90,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Nước chấm chẩm chéo', 90000, 'image/anh_chamcheo.png')">Thêm vào giỏ</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="image\anh_nuocmam.png" alt="Mắm tỏi ớt" class="product-img" onclick="openModal('Nước mắm tỏi ớt', 95000, 'Chai lẻ 300ml. Mặn ngọt hài hòa.', 'assets/img/anh_nuocmam.png')">
+                <h4>Nước mắm tỏi ớt</h4>
+                <p class="price">95,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Nước mắm tỏi ớt', 95000, 'image/anh_nuocmam.png')">Thêm vào giỏ</button>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+    
+        </div>
+
+        <hr class="divider">
+
+        <h3 class="sub-title">Đặc biệt (Box quà tặng)</h3>
+        <div class="products-grid">
+            <div class="product-card gift-card">
+                <img src="image\anh_box_qua.jpg" alt="Box quà tặng" class="product-img" onclick="openModal('Box Quà Tặng Đặc Biệt', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng dành cho các công ty đối tác, biếu người lớn. Khách hàng được chọn từ 2-5 topping đi kèm.', 'anh_box_qua.jpg')">
+                <h4>Box Quà Tặng Sang Trọng</h4>
+                <p class="desc">Phù hợp làm quà biếu, đối tác. Chọn từ 2-5 topping đi kèm.</p>
+                <p class="price">1,500,000 - 3,000,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Box Quà Tặng Sang Trọng', 1500000, 'image/anh_box_qua.jpg')">Thêm vào giỏ</button>
+            </div>
+            <div class="product-card gift-card">
+                <img src="" alt="Box quà tặng" class="product-img" onclick="openModal('Box Quà Tặng Signature', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng nhỏ. Khách hàng được chọn 3 món khô lạp và không có topping đi kèm.', 'assets/img/anh_box_signature.jpg')">
+                <h4>Box Quà Tặng Signature</h4>
+                <p class="desc">Chọn 3 món khô lạp cố định không kèm nước chấm và có topping nhỏ đi kèm</p>
+                <p class="price">1,500,000 VND</p>
+                <button class="btn-add" onclick="addToCart('Box Quà Tặng Signature', 1500000, 'image/anh_box_signature.jpg')">Thêm vào giỏ</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2 class="logo">TROUW</h2>
+            <p>Công ty TNHH TROUW - Tự hào sản phẩm Việt</p>
+            <p>&copy; 2026 TROUW CORP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

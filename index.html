@@ -1,525 +1,525 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TROUW - Tinh Hoa Đất Việt</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <span>⚡ MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TỪ 500.000Đ TOÀN QUỐC!</span>
-            <div class="top-links">
-                <a href="#">Hỗ trợ</a> | <a href="#">Tra cứu đơn</a> | <a href="#">Đăng nhập</a>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TROUW - Tinh Hoa Đất Việt</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <span>⚡ MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TỪ 500.000Đ TOÀN QUỐC!</span>
+                <div class="top-links">
+                    <a href="#">Hỗ trợ</a> | <a href="#">Tra cứu đơn</a> | <a href="#">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+
+        <header id="main-header">
+            <a href="#" class="logo">TROUW.</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home" class="active-link">Trang chủ</a></li>
+                    <li><a href="#about">Câu chuyện</a></li>
+                    <li><a href="#products">Cửa hàng</a></li>
+                    <li><a href="#faq">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <span class="search-icon">🔍</span>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Giỏ Hàng Của Bạn</h2>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Giỏ hàng đang trống.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total"><span>Tổng cộng:</span> <span id="cart-total-price">0</span> VND</div>
+                <p class="tax-note">Chưa bao gồm phí vận chuyển.</p>
+                <button class="btn-primary btn-full">TIẾN HÀNH THANH TOÁN</button>
+            </div>
+        </div>
+        <div id="cart-overlay" class="overlay" onclick="toggleCart()"></div>
+
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <div class="modal-layout">
+                    <div class="modal-img-container">
+                        <img id="modal-img" src="" alt="Hình sản phẩm">
+                    </div>
+                    <div class="modal-info">
+                        <div class="modal-stars">★★★★★ <span>(4.9/5)</span></div>
+                        <h2 id="modal-title">Tên sản phẩm</h2>
+                        <p class="modal-price" id="modal-price">0 VND</p>
+                        <div class="modal-desc" id="modal-desc">Mô tả chi tiết...</div>
+                        <ul class="modal-features">
+                            <li>✔️ Đóng gói hút chân không an toàn</li>
+                            <li>✔️ Không chất bảo quản hóa học</li>
+                            <li>✔️ Giao hàng hỏa tốc trong 2h</li>
+                        </ul>
+                        <button class="btn-add btn-full" id="modal-add-btn">THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-overlay" class="overlay" onclick="closeModal()"></div>
+
+        <section id="home" class="hero">
+            <div class="hero-decorative-box"></div>
+            <div class="hero-content">
+                <span class="subtitle-hero">Thương Hiệu Đặc Sản</span>
+                <h1>TINH HOA<br>ĐẤT VIỆT</h1>
+                <p>Sự giao thoa hoàn hảo giữa hương vị truyền thống ngàn đời<br>và phong cách thưởng thức hiện đại.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">MUA SẮM NGAY</a>
+                    <a href="#about" class="btn-outline">TÌM HIỂU THÊM</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-container bg-pattern">
+            <div class="title-wrapper">
+                <h2 class="section-title">Câu Chuyện TROUW</h2>
+                <p class="section-subtitle">Hành trình mang hương vị bản làng đến bàn tiệc hiện đại</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-img-container">
+                    <div class="img-border-offset"></div>
+                    <img src="image/anh_gioi_thieu_1.jpg" alt="TROUW" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h3 class="sub-title">Khởi nguồn đam mê</h3>
+                    <p>Thành lập từ năm 2018, TROUW là thương hiệu Việt Nam tiên phong trong việc phân phối sỉ & lẻ khô lạp trâu cao cấp. Cái tên "TROUW" được cách điệu nghệ thuật từ chữ "Trâu", mang theo niềm kiêu hãnh của nông nghiệp nước nhà.</p>
+                    <p>Khởi nguồn từ mong muốn đưa đặc sản vùng cao đến gần hơn với thực khách, chúng tôi đã không ngừng nghiên cứu để cho ra đời những dòng sản phẩm hài hòa nhưng vẫn giữ nguyên vẹn cái hồn của núi rừng.</p>
+                    <div class="stats-row">
+                        <div class="stat-box"><h4>5+</h4><p>Năm Kinh Nghiệm</p></div>
+                        <div class="stat-box"><h4>10K+</h4><p>Khách Hàng</p></div>
+                        <div class="stat-box"><h4>100%</h4><p>Nguyên Liệu Sạch</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <img src="image/Organic-Spices-blog.jpg" alt="Organic" class="principle-img">
+                    <div class="card-body">
+                        <h4>Nguyên Liệu Hữu Cơ</h4>
+                        <p>Sử dụng 100% gia vị tự nhiên, chọn lọc khắt khe từ các nông trại chuẩn Organic, đảm bảo an toàn tuyệt đối cho sức khỏe.</p>
+                    </div>
+                </div>
+                <div class="principle-card">
+                    <img src="image/anh_ba_mia.png" alt="Bao bì bã mía" class="principle-img">
+                    <div class="card-body">
+                        <h4>Bao Bì Bã Mía</h4>
+                        <p>Cam kết bảo vệ môi trường bằng việc ứng dụng bao bì phân hủy sinh học từ bã mía, giảm thiểu rác thải nhựa.</p>
+                    </div>
+                </div>
+                <div class="principle-card">
+                    <img src="image/anh_than.jpg" alt="Than hoạt tính" class="principle-img">
+                    <div class="card-body">
+                        <h4>Năng Lượng Xanh</h4>
+                        <p>Tận dụng than hoạt tính từ phế phẩm nông nghiệp trong quá trình sản xuất, hướng tới mô hình kinh tế tuần hoàn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section-container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Khám Phá Hương Vị</h2>
+                <p class="section-subtitle">Lựa chọn từ các dòng sản phẩm đặc trưng nhất của chúng tôi</p>
+            </div>
+
+            <div class="filter-controls">
+                <button class="filter-btn active" onclick="filterItems('all')">Tất Cả Sản Phẩm</button>
+                <button class="filter-btn" onclick="filterItems('kho-trau')">Khô Lạp Trâu</button>
+                <button class="filter-btn" onclick="filterItems('an-kem')">Đồ Ăn Kèm & Chấm</button>
+                <button class="filter-btn" onclick="filterItems('qua-tang')">Box Quà Tặng</button>
+            </div>
+
+            <div class="products-grid" id="product-list">
+                <div class="product-card" data-category="kho-trau">
+                    <div class="card-badges"><span class="badge badge-hot">HOT</span></div>
+                    <div class="img-wrapper">
+                        <img src="image/anh_classic.jpg" alt="Classic" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Khô lạp Trâu - Classic', 250000, 'Gói lẻ 300g. Khô lạp Classic được chế biến từ thịt heo tươi tuyển chọn kỹ lưỡng, kết hợp hài hòa cùng mỡ heo, đường, muối, tiêu xay, tỏi tươi và các loại gia vị truyền thống. Quy trình tẩm ướp và sấy khô được kiểm soát chặt chẽ giúp giữ trọn vị ngọt tự nhiên của thịt, độ béo vừa phải và hương thơm đặc trưng. Sản phẩm mang đến trải nghiệm đậm đà, quen thuộc nhưng vẫn tinh tế, phù hợp với nhiều khẩu vị và có thể dùng trong nhiều dịp khác nhau.', 'image/anh_classic.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(128)</span></div>
+                        <h4>Classic Truyền Thống</h4>
+                        <p class="desc">Gói 300g - Đậm đà bản sắc</p>
+                        <div class="price-row">
+                            <p class="price">250,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Classic Truyền Thống', 250000, 'image/anh_classic.jpg')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kho-trau">
+                    <div class="card-badges"><span class="badge badge-new">MỚI</span></div>
+                    <div class="img-wrapper">
+                        <img src="image/anh_phomai.jpg" alt="Phô mai" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Khô lạp Trâu - Phô mai', 280000, 'Gói lẻ 300g. Khô lạp vị Phô mai được chế biến từ thịt heo tươi, mỡ heo kết hợp cùng phô mai cao cấp, sữa bột, bơ và các gia vị nhẹ nhàng. Quá trình chế biến giúp phô mai tan chảy và hòa quyện vào từng thớ thịt, tạo nên hương vị béo ngậy, thơm dịu và mềm mịn. Sản phẩm mang đến trải nghiệm ẩm thực hiện đại, phù hợp với cả người lớn và trẻ nhỏ, đặc biệt là những ai yêu thích vị béo đặc trưng của phô mai..', 'image/anh_phomai.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★☆ <span>(85)</span></div>
+                        <h4>Phô Mai Béo Ngậy</h4>
+                        <p class="desc">Gói 300g - Sáng tạo ẩm thực</p>
+                        <div class="price-row">
+                            <p class="price">280,000đ <del>300,000đ</del></p>
+                            <button class="btn-cart-icon" onclick="addToCart('Phô Mai Béo Ngậy', 280000, 'image/anh_phomai.jpg')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kho-trau">
+                    <div class="img-wrapper">
+                        <img src="image/anh_cayphomai.jpg" alt="Cay phô mai" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Khô lạp Trâu - Cay Phô mai', 300000, 'Gói lẻ 300g. Khô lạp vị Phô mai cay là sự kết hợp hoàn hảo giữa thịt heo tươi, mỡ heo, phô mai, bơ, sữa bột cùng ớt bột và ớt tươi. Vị béo ngậy của phô mai được cân bằng bởi vị cay nhẹ, tạo nên sự hòa quyện độc đáo giữa hai phong cách ẩm thực. Từng miếng khô lạp mang lại cảm giác vừa béo, vừa cay nhẹ nơi đầu lưỡi, rất phù hợp với những ai thích trải nghiệm hương vị mới lạ nhưng không quá gắt.', 'image/anh_cayphomai.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(210)</span></div>
+                        <h4>Cay Nồng Phô Mai</h4>
+                        <p class="desc">Gói 300g - Kích thích vị giác</p>
+                        <div class="price-row">
+                            <p class="price">300,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Cay Nồng Phô Mai', 300000, 'image/anh_cayphomai.jpg')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kho-trau">
+                    <div class="img-wrapper">
+                        <img src="image/anh_rongbien.jpg" alt="Rong biển" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Khô lạp Trâu - Rong biển', 280000, 'Gói lẻ 300g. Khô lạp vị Rong biển được làm từ thịt heo tươi, mỡ heo kết hợp với rong biển sấy khô, mè rang, muối và các gia vị tinh chọn. Hương vị thanh nhẹ, thơm đặc trưng của rong biển hòa quyện cùng độ béo của thịt tạo nên tổng thể hài hòa, dễ ăn và giàu dinh dưỡng. Sản phẩm mang hơi hướng ẩm thực Á Đông hiện đại, phù hợp cho cả ăn vặt lẫn dùng trong bữa ăn nhẹ.', 'image/anh_rongbien.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★☆ <span>(64)</span></div>
+                        <h4>Rong Biển Thanh Mát</h4>
+                        <p class="desc">Gói 300g - Thanh đạm, lạ miệng</p>
+                        <div class="price-row">
+                            <p class="price">280,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Rong Biển Thanh Mát', 280000, 'image/anh_rongbien.jpg')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="an-kem">
+                    <div class="card-badges"><span class="badge badge-sale">-10%</span></div>
+                    <div class="img-wrapper">
+                        <img src="image/anh_chamcheo.png" alt="Chẩm chéo" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Nước chấm chẩm chéo', 90000, 'Chai lẻ 300ml.Chẩm chéo là loại gia vị chấm đặc trưng của vùng Tây Bắc, được pha trộn từ mắc khén, hạt dổi, ớt, tỏi, gừng, muối và các loại rau thơm. Khi dùng kèm với khô lạp, chẩm chéo giúp tăng thêm chiều sâu hương vị với mùi thơm nồng ấm đặc trưng, vị cay nhẹ xen lẫn hậu vị tê nhẹ độc đáo. Sự kết hợp này mang đến trải nghiệm ẩm thực mới lạ, đậm chất vùng miền, giúp món ăn trở nên hấp dẫn và khác biệt hơn.', 'image/anh_chamcheo.png')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(405)</span></div>
+                        <h4>Nước Chấm Chẩm Chéo</h4>
+                        <p class="desc">Chai 300ml - Chuẩn vị Tây Bắc</p>
+                        <div class="price-row">
+                            <p class="price">90,000đ <del>100,000đ</del></p>
+                            <button class="btn-cart-icon" onclick="addToCart('Nước Chấm Chẩm Chéo', 90000, 'image/anh_chamcheo.png')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="an-kem">
+                    <div class="img-wrapper">
+                        <img src="image/anh_nuocmam.png" alt="Mắm tỏi ớt" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Nước mắm tỏi ớt', 95000, 'Chai lẻ 300ml. Nước mắm tỏi ớt là loại gia vị chấm quen thuộc, được pha chế từ nước mắm truyền thống, tỏi tươi, ớt, đường và nước cốt chanh hoặc giấm. Khi kết hợp với khô lạp, vị mặn ngọt hài hòa của nước mắm hòa quyện cùng hương thơm của tỏi và vị cay nhẹ của ớt giúp làm nổi bật vị đậm đà của thịt. Đây là lựa chọn lý tưởng cho những ai yêu thích hương vị truyền thống, dễ ăn nhưng vẫn đầy cuốn hút.', 'image/anh_nuocmam.png')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★☆ <span>(92)</span></div>
+                        <h4>Nước Mắm Tỏi Ớt</h4>
+                        <p class="desc">Chai 300ml - Đậm đà đưa cơm</p>
+                        <div class="price-row">
+                            <p class="price">95,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Nước Mắm Tỏi Ớt', 95000, 'image/anh_nuocmam.png')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kho-trau">
+                    <div class="img-wrapper">
+                        <img src="image/kimchi.jpg" alt="Kimchi" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Kimchi Hàn Quốc', 230000, 'Đồ ăn kèm: Khô lạp vị Kimchi là sự kết hợp độc đáo giữa thịt heo tươi, mỡ heo cùng hỗn hợp kimchi lên men từ cải thảo, ớt bột Hàn Quốc, tỏi, gừng và hành lá. Nhờ quá trình lên men tự nhiên, sản phẩm sở hữu vị chua nhẹ đặc trưng hòa quyện cùng vị cay dịu và hương thơm nồng hấp dẫn. Từng miếng khô lạp mang đến cảm giác mới lạ, kích thích vị giác, rất phù hợp cho những ai yêu thích ẩm thực Hàn Quốc.', 'image/kimchi.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(150)</span></div>
+                        <h4>Kimchi Lên Men</h4>
+                        <p class="desc">Phần ăn kèm - Chua cay giòn rụm</p>
+                        <div class="price-row">
+                            <p class="price">230,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Kimchi Lên Men', 230000, 'image/kimchi.jpg')">🛒</button>
+                        </div>
+                    </div>
+                </div>
+    <div class="product-card" data-category="kho-trau">
+        <div class="img-wrapper">
+            <img src="image/dua-chua.jpg" alt="Dưa leo muối" class="product-img">
+            <div class="quick-action">
+                <button onclick="openModal('Dưa Leo Muối', 235000, 'Đồ ăn kèm:sự kết hợp độc đáo giữa thịt heo tươi, mỡ heo cùng hỗn hợp kimchi lên men từ cải thảo, ớt bột Hàn Quốc, tỏi, gừng và hành lá. Nhờ quá trình lên men tự nhiên, sản phẩm sở hữu vị chua nhẹ đặc trưng hòa quyện cùng vị cay dịu ', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
+            </div>
+        </div>
+        <div class="product-info">
+            <div class="stars">★★★★☆ <span>(68)</span></div>
+            <h4>Dưa Leo Muối</h4>
+            <p class="desc">Phần ăn kèm - Giòn mát dễ ăn</p>
+            <div class="price-row">
+                <p class="price">235,000đ</p>
+                <button class="btn-cart-icon" onclick="addToCart('Dưa Leo Muối', 235000, 'image/dua-chua.jpg')">🛒</button>
             </div>
         </div>
     </div>
 
-    <header id="main-header">
-        <a href="#" class="logo">TROUW.</a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="#home" class="active-link">Trang chủ</a></li>
-                <li><a href="#about">Câu chuyện</a></li>
-                <li><a href="#products">Cửa hàng</a></li>
-                <li><a href="#faq">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="header-icons">
-            <span class="search-icon">🔍</span>
-            <div class="cart-icon" onclick="toggleCart()">
-                🛒 <span id="cart-count">0</span>
+    <div class="product-card" data-category="kho-trau">
+        <div class="img-wrapper">
+            <img src="image/dua-chua.jpg" alt="Ớt muối" class="product-img">
+            <div class="quick-action">
+                <button onclick="openModal('Ớt Muối Tây Bắc', 240000, 'Đồ ăn kèm: Ớt Ớt muối Tây Bắc cay nồng đặc trưng, kết hợp cùng muối, tỏi và gia vị vùng cao. Hương vị đậm đà, kích thích vị giác, rất phù hợp ăn kèm khô lạp hoặc các món nướng.', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
             </div>
         </div>
-    </header>
-
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h2>Giỏ Hàng Của Bạn</h2>
-            <button class="close-cart" onclick="toggleCart()">&times;</button>
-        </div>
-        <div id="cart-items" class="cart-items">
-            <p class="empty-cart">Giỏ hàng đang trống.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total"><span>Tổng cộng:</span> <span id="cart-total-price">0</span> VND</div>
-            <p class="tax-note">Chưa bao gồm phí vận chuyển.</p>
-            <button class="btn-primary btn-full">TIẾN HÀNH THANH TOÁN</button>
-        </div>
-    </div>
-    <div id="cart-overlay" class="overlay" onclick="toggleCart()"></div>
-
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-layout">
-                <div class="modal-img-container">
-                    <img id="modal-img" src="" alt="Hình sản phẩm">
-                </div>
-                <div class="modal-info">
-                    <div class="modal-stars">★★★★★ <span>(4.9/5)</span></div>
-                    <h2 id="modal-title">Tên sản phẩm</h2>
-                    <p class="modal-price" id="modal-price">0 VND</p>
-                    <div class="modal-desc" id="modal-desc">Mô tả chi tiết...</div>
-                    <ul class="modal-features">
-                        <li>✔️ Đóng gói hút chân không an toàn</li>
-                        <li>✔️ Không chất bảo quản hóa học</li>
-                        <li>✔️ Giao hàng hỏa tốc trong 2h</li>
-                    </ul>
-                    <button class="btn-add btn-full" id="modal-add-btn">THÊM VÀO GIỎ</button>
-                </div>
+        <div class="product-info">
+            <div class="stars">★★★★★ <span>(112)</span></div>
+            <h4>Ớt Muối Tây Bắc</h4>
+            <p class="desc">Phần ăn kèm - Cay nồng đậm vị</p>
+            <div class="price-row">
+                <p class="price">240,000đ</p>
+                <button class="btn-cart-icon" onclick="addToCart('Ớt Muối Tây Bắc', 240000, 'image/dua-chua.jpg')">🛒</button>
             </div>
         </div>
     </div>
-    <div id="modal-overlay" class="overlay" onclick="closeModal()"></div>
-
-    <section id="home" class="hero">
-        <div class="hero-decorative-box"></div>
-        <div class="hero-content">
-            <span class="subtitle-hero">Thương Hiệu Đặc Sản</span>
-            <h1>TINH HOA<br>ĐẤT VIỆT</h1>
-            <p>Sự giao thoa hoàn hảo giữa hương vị truyền thống ngàn đời<br>và phong cách thưởng thức hiện đại.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn-primary">MUA SẮM NGAY</a>
-                <a href="#about" class="btn-outline">TÌM HIỂU THÊM</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section-container bg-pattern">
-        <div class="title-wrapper">
-            <h2 class="section-title">Câu Chuyện TROUW</h2>
-            <p class="section-subtitle">Hành trình mang hương vị bản làng đến bàn tiệc hiện đại</p>
-        </div>
-        
-        <div class="about-grid">
-            <div class="about-img-container">
-                <div class="img-border-offset"></div>
-                <img src="image/anh_gioi_thieu_1.jpg" alt="TROUW" class="about-img">
-            </div>
-            <div class="about-text">
-                <h3 class="sub-title">Khởi nguồn đam mê</h3>
-                <p>Thành lập từ năm 2018, TROUW là thương hiệu Việt Nam tiên phong trong việc phân phối sỉ & lẻ khô lạp trâu cao cấp. Cái tên "TROUW" được cách điệu nghệ thuật từ chữ "Trâu", mang theo niềm kiêu hãnh của nông nghiệp nước nhà.</p>
-                <p>Khởi nguồn từ mong muốn đưa đặc sản vùng cao đến gần hơn với thực khách, chúng tôi đã không ngừng nghiên cứu để cho ra đời những dòng sản phẩm hài hòa nhưng vẫn giữ nguyên vẹn cái hồn của núi rừng.</p>
-                <div class="stats-row">
-                    <div class="stat-box"><h4>5+</h4><p>Năm Kinh Nghiệm</p></div>
-                    <div class="stat-box"><h4>10K+</h4><p>Khách Hàng</p></div>
-                    <div class="stat-box"><h4>100%</h4><p>Nguyên Liệu Sạch</p></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="principles-grid">
-            <div class="principle-card">
-                <img src="image/Organic-Spices-blog.jpg" alt="Organic" class="principle-img">
-                <div class="card-body">
-                    <h4>Nguyên Liệu Hữu Cơ</h4>
-                    <p>Sử dụng 100% gia vị tự nhiên, chọn lọc khắt khe từ các nông trại chuẩn Organic, đảm bảo an toàn tuyệt đối cho sức khỏe.</p>
-                </div>
-            </div>
-            <div class="principle-card">
-                <img src="image/anh_ba_mia.png" alt="Bao bì bã mía" class="principle-img">
-                <div class="card-body">
-                    <h4>Bao Bì Bã Mía</h4>
-                    <p>Cam kết bảo vệ môi trường bằng việc ứng dụng bao bì phân hủy sinh học từ bã mía, giảm thiểu rác thải nhựa.</p>
-                </div>
-            </div>
-            <div class="principle-card">
-                <img src="image/anh_than.jpg" alt="Than hoạt tính" class="principle-img">
-                <div class="card-body">
-                    <h4>Năng Lượng Xanh</h4>
-                    <p>Tận dụng than hoạt tính từ phế phẩm nông nghiệp trong quá trình sản xuất, hướng tới mô hình kinh tế tuần hoàn.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="section-container">
-        <div class="title-wrapper">
-            <h2 class="section-title">Khám Phá Hương Vị</h2>
-            <p class="section-subtitle">Lựa chọn từ các dòng sản phẩm đặc trưng nhất của chúng tôi</p>
-        </div>
-
-        <div class="filter-controls">
-            <button class="filter-btn active" onclick="filterItems('all')">Tất Cả Sản Phẩm</button>
-            <button class="filter-btn" onclick="filterItems('kho-trau')">Khô Lạp Trâu</button>
-            <button class="filter-btn" onclick="filterItems('an-kem')">Đồ Ăn Kèm & Chấm</button>
-            <button class="filter-btn" onclick="filterItems('qua-tang')">Box Quà Tặng</button>
-        </div>
-
-        <div class="products-grid" id="product-list">
-            <div class="product-card" data-category="kho-trau">
-                <div class="card-badges"><span class="badge badge-hot">HOT</span></div>
-                <div class="img-wrapper">
-                    <img src="image/anh_classic.jpg" alt="Classic" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Khô lạp Trâu - Classic', 250000, 'Gói lẻ 300g. Khô lạp Classic được chế biến từ thịt heo tươi tuyển chọn kỹ lưỡng, kết hợp hài hòa cùng mỡ heo, đường, muối, tiêu xay, tỏi tươi và các loại gia vị truyền thống. Quy trình tẩm ướp và sấy khô được kiểm soát chặt chẽ giúp giữ trọn vị ngọt tự nhiên của thịt, độ béo vừa phải và hương thơm đặc trưng. Sản phẩm mang đến trải nghiệm đậm đà, quen thuộc nhưng vẫn tinh tế, phù hợp với nhiều khẩu vị và có thể dùng trong nhiều dịp khác nhau.', 'image/anh_classic.jpg')">👁️ Xem chi tiết</button>
+                <div class="product-card" data-category="kho-trau">
+                    <div class="img-wrapper">
+                        <img src="image/dua-chua.jpg" alt="Dưa chua" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Dưa chua', 250000, 'Đồ ăn kèm:Dưa leo muối giòn mát, được ngâm cùng tỏi và gia vị tự nhiên, mang đến vị chua nhẹ thanh dịu. Thích hợp ăn kèm khô lạp, giúp cân bằng vị béo và tạo cảm giác ngon miệng hơn.', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★☆ <span>(77)</span></div>
+                        <h4>Dưa Chua Truyền Thống</h4>
+                        <p class="desc">Phần ăn kèm - Giải ngấy tuyệt hảo</p>
+                        <div class="price-row">
+                            <p class="price">250,000đ</p>
+                            <button class="btn-cart-icon" onclick="addToCart('Dưa Chua Truyền Thống', 250000, 'image/dua-chua.jpg')">🛒</button>
+                        </div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(128)</span></div>
-                    <h4>Classic Truyền Thống</h4>
-                    <p class="desc">Gói 300g - Đậm đà bản sắc</p>
-                    <div class="price-row">
-                        <p class="price">250,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Classic Truyền Thống', 250000, 'image/anh_classic.jpg')">🛒</button>
+
+                <div class="product-card gift-card" data-category="qua-tang">
+                    <div class="card-badges"><span class="badge badge-hot">PREMIUM</span></div>
+                    <div class="img-wrapper">
+                        <img src="image/anh_box_qua.jpg" alt="Box quà tặng" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Box Quà Tặng Đặc Biệt', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng dành cho các công ty đối tác, biếu người lớn. Khách hàng được chọn từ 2-5 topping đi kèm.', 'image/anh_box_qua.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(55)</span></div>
+                        <h4>Set Quà Tặng Sang Trọng</h4>
+                        <p class="desc">Hộp gỗ cao cấp - Tùy chọn 5 món</p>
+                        <div class="price-row">
+                            <p class="price">1,500,000đ</p>
+                            <button class="btn-primary" onclick="addToCart('Set Quà Tặng Sang Trọng', 1500000, 'image/anh_box_qua.jpg')">MUA BOX NÀY</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card gift-card" data-category="qua-tang">
+                    <div class="img-wrapper">
+                        <img src="image/anh_box_signature.jpg" alt="Box quà tặng" class="product-img">
+                        <div class="quick-action">
+                            <button onclick="openModal('Box Quà Tặng Signature', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng nhỏ. Khách hàng được chọn 3 món khô lạp và không có topping đi kèm.', 'image/anh_box_signature.jpg')">👁️ Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="stars">★★★★★ <span>(42)</span></div>
+                        <h4>Set Quà Signature</h4>
+                        <p class="desc">Hộp giấy cứng - 3 món đặc trưng</p>
+                        <div class="price-row">
+                            <p class="price">1,500,000đ</p>
+                            <button class="btn-primary" onclick="addToCart('Set Quà Signature', 1500000, 'image/anh_box_signature.jpg')">MUA BOX NÀY</button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card" data-category="kho-trau">
-                <div class="card-badges"><span class="badge badge-new">MỚI</span></div>
-                <div class="img-wrapper">
-                    <img src="image/anh_phomai.jpg" alt="Phô mai" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Khô lạp Trâu - Phô mai', 280000, 'Gói lẻ 300g. Khô lạp vị Phô mai được chế biến từ thịt heo tươi, mỡ heo kết hợp cùng phô mai cao cấp, sữa bột, bơ và các gia vị nhẹ nhàng. Quá trình chế biến giúp phô mai tan chảy và hòa quyện vào từng thớ thịt, tạo nên hương vị béo ngậy, thơm dịu và mềm mịn. Sản phẩm mang đến trải nghiệm ẩm thực hiện đại, phù hợp với cả người lớn và trẻ nhỏ, đặc biệt là những ai yêu thích vị béo đặc trưng của phô mai..', 'image/anh_phomai.jpg')">👁️ Xem chi tiết</button>
+        <section class="section-container bg-pattern">
+            <div class="title-wrapper">
+                <h2 class="section-title">Khách Hàng Đánh Giá</h2>
+                <p class="section-subtitle">Niềm tự hào của chúng tôi là sự hài lòng của bạn</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testi-text">Mình đã mua set quà tặng biếu đối tác dịp lễ, ai cũng khen nức nở. Bao bì cực kỳ sang trọng, thịt trâu dai ngọt, vị chẩm chéo thì không chê vào đâu được!</p>
+                    <div class="testi-author">
+                        <h5>Anh Thiên Bình</h5>
+                        <span>Giám đốc KD, TP.HCM</span>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="stars">★★★★☆ <span>(85)</span></div>
-                    <h4>Phô Mai Béo Ngậy</h4>
-                    <p class="desc">Gói 300g - Sáng tạo ẩm thực</p>
-                    <div class="price-row">
-                        <p class="price">280,000đ <del>300,000đ</del></p>
-                        <button class="btn-cart-icon" onclick="addToCart('Phô Mai Béo Ngậy', 280000, 'image/anh_phomai.jpg')">🛒</button>
+                <div class="testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testi-text">Thích nhất là cái vị khô trâu phô mai, ăn lạ miệng mà rất dính. Điểm cộng lớn cho việc dùng bao bì bã mía thân thiện với môi trường. Sẽ ủng hộ lâu dài.</p>
+                    <div class="testi-author">
+                        <h5>Chị Lan Chi</h5>
+                        <span>Nhân viên Văn phòng</span>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testi-text">Nước mắm tỏi ớt pha kẹo kẹo rất vừa miệng, ăn chung với khô lạp hay cơm trắng đều ngon. Giao hàng ở Sài Gòn rất nhanh gọn, đóng gói cẩn thận.</p>
+                    <div class="testi-author">
+                        <h5>Chú Hoàng Thái</h5>
+                        <span>Quận 3, TP.HCM</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card" data-category="kho-trau">
-                <div class="img-wrapper">
-                    <img src="image/anh_cayphomai.jpg" alt="Cay phô mai" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Khô lạp Trâu - Cay Phô mai', 300000, 'Gói lẻ 300g. Khô lạp vị Phô mai cay là sự kết hợp hoàn hảo giữa thịt heo tươi, mỡ heo, phô mai, bơ, sữa bột cùng ớt bột và ớt tươi. Vị béo ngậy của phô mai được cân bằng bởi vị cay nhẹ, tạo nên sự hòa quyện độc đáo giữa hai phong cách ẩm thực. Từng miếng khô lạp mang lại cảm giác vừa béo, vừa cay nhẹ nơi đầu lưỡi, rất phù hợp với những ai thích trải nghiệm hương vị mới lạ nhưng không quá gắt.', 'image/anh_cayphomai.jpg')">👁️ Xem chi tiết</button>
+        <section id="faq" class="section-container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Blog</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Giá trị cốt lõi  <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Tại TROUW, chúng tôi tin rằng một sản phẩm ngon phải bắt đầu từ sự chân thật.
+    Chúng tôi chọn lọc nguyên liệu kỹ lưỡng, giữ trọn hương vị khô lạp trâu truyền thống và nói không với những thỏa hiệp làm giảm chất lượng. Mỗi miếng khô không chỉ là một món ăn, mà còn là sự cam kết về sự chỉn chu và trung thực.
+    TROUW hướng đến việc mang lại trải nghiệm đơn giản nhưng đáng nhớ – từ hương vị đến cách bạn thưởng thức cùng bạn bè và người thân.
+    Không chạy theo số lượng, TROUW chọn làm tốt từng sản phẩm. Vì chúng tôi tin rằng giá trị thật sẽ luôn được cảm nhận rõ ràng nhất qua từng lần thưởng thức.
+    </p>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(210)</span></div>
-                    <h4>Cay Nồng Phô Mai</h4>
-                    <p class="desc">Gói 300g - Kích thích vị giác</p>
-                    <div class="price-row">
-                        <p class="price">300,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Cay Nồng Phô Mai', 300000, 'image/anh_cayphomai.jpg')">🛒</button>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Cột mốc hoạt động <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>TROUW tin vào sự chân thật trong từng sản phẩm. Khô lạp trâu được làm từ nguyên liệu chọn lọc, giữ vị truyền thống và không thỏa hiệp với chất lượng.
+    Cột mốc:
+    Bắt đầu từ ý tưởng làm khô lạp trâu “đúng vị”
+
+
+    Hoàn thiện công thức qua nhiều thử nghiệm
+
+
+    Ra mắt và đến tay khách hàng
+
+
+    Tiếp tục cải tiến, giữ vững chất lượng
+
+
+    TROUW chọn làm tốt từng sản phẩm, để mỗi lần thưởng thức đều đáng nhớ.
+    </p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Ý tưởng hình thành khô lạp TROUW <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>TROUW bắt đầu từ một suy nghĩ rất đơn giản: làm ra khô lạp trâu đúng vị – ngon, sạch và đáng tin.
+    Giữa thị trường nhiều lựa chọn, chúng tôi nhận ra rằng không phải sản phẩm nào cũng giữ được sự ổn định về chất lượng và hương vị. Từ đó, TROUW ra đời với mong muốn mang đến một phiên bản khô lạp trâu được làm chỉn chu hơn – từ nguyên liệu đến cách chế biến.
+    Không cầu kỳ, không phô trương, TROUW tập trung vào điều cốt lõi: tạo ra một món ăn mà bạn có thể tin tưởng và muốn quay lại nhiều lần.
+    </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card" data-category="kho-trau">
-                <div class="img-wrapper">
-                    <img src="image/anh_rongbien.jpg" alt="Rong biển" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Khô lạp Trâu - Rong biển', 280000, 'Gói lẻ 300g. Khô lạp vị Rong biển được làm từ thịt heo tươi, mỡ heo kết hợp với rong biển sấy khô, mè rang, muối và các gia vị tinh chọn. Hương vị thanh nhẹ, thơm đặc trưng của rong biển hòa quyện cùng độ béo của thịt tạo nên tổng thể hài hòa, dễ ăn và giàu dinh dưỡng. Sản phẩm mang hơi hướng ẩm thực Á Đông hiện đại, phù hợp cho cả ăn vặt lẫn dùng trong bữa ăn nhẹ.', 'image/anh_rongbien.jpg')">👁️ Xem chi tiết</button>
-                    </div>
+        <footer>
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <h3>Đăng ký nhận Ưu Đãi</h3>
+                    <p>Nhận ngay mã giảm giá 10% cho đơn hàng đầu tiên khi đăng ký bản tin.</p>
                 </div>
-                <div class="product-info">
-                    <div class="stars">★★★★☆ <span>(64)</span></div>
-                    <h4>Rong Biển Thanh Mát</h4>
-                    <p class="desc">Gói 300g - Thanh đạm, lạ miệng</p>
-                    <div class="price-row">
-                        <p class="price">280,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Rong Biển Thanh Mát', 280000, 'image/anh_rongbien.jpg')">🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="an-kem">
-                <div class="card-badges"><span class="badge badge-sale">-10%</span></div>
-                <div class="img-wrapper">
-                    <img src="image/anh_chamcheo.png" alt="Chẩm chéo" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Nước chấm chẩm chéo', 90000, 'Chai lẻ 300ml.Chẩm chéo là loại gia vị chấm đặc trưng của vùng Tây Bắc, được pha trộn từ mắc khén, hạt dổi, ớt, tỏi, gừng, muối và các loại rau thơm. Khi dùng kèm với khô lạp, chẩm chéo giúp tăng thêm chiều sâu hương vị với mùi thơm nồng ấm đặc trưng, vị cay nhẹ xen lẫn hậu vị tê nhẹ độc đáo. Sự kết hợp này mang đến trải nghiệm ẩm thực mới lạ, đậm chất vùng miền, giúp món ăn trở nên hấp dẫn và khác biệt hơn.', 'image/anh_chamcheo.png')">👁️ Xem chi tiết</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(405)</span></div>
-                    <h4>Nước Chấm Chẩm Chéo</h4>
-                    <p class="desc">Chai 300ml - Chuẩn vị Tây Bắc</p>
-                    <div class="price-row">
-                        <p class="price">90,000đ <del>100,000đ</del></p>
-                        <button class="btn-cart-icon" onclick="addToCart('Nước Chấm Chẩm Chéo', 90000, 'image/anh_chamcheo.png')">🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="an-kem">
-                <div class="img-wrapper">
-                    <img src="image/anh_nuocmam.png" alt="Mắm tỏi ớt" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Nước mắm tỏi ớt', 95000, 'Chai lẻ 300ml. Nước mắm tỏi ớt là loại gia vị chấm quen thuộc, được pha chế từ nước mắm truyền thống, tỏi tươi, ớt, đường và nước cốt chanh hoặc giấm. Khi kết hợp với khô lạp, vị mặn ngọt hài hòa của nước mắm hòa quyện cùng hương thơm của tỏi và vị cay nhẹ của ớt giúp làm nổi bật vị đậm đà của thịt. Đây là lựa chọn lý tưởng cho những ai yêu thích hương vị truyền thống, dễ ăn nhưng vẫn đầy cuốn hút.', 'image/anh_nuocmam.png')">👁️ Xem chi tiết</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★☆ <span>(92)</span></div>
-                    <h4>Nước Mắm Tỏi Ớt</h4>
-                    <p class="desc">Chai 300ml - Đậm đà đưa cơm</p>
-                    <div class="price-row">
-                        <p class="price">95,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Nước Mắm Tỏi Ớt', 95000, 'image/anh_nuocmam.png')">🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="an-kem">
-                <div class="img-wrapper">
-                    <img src="image/kimchi.jpg" alt="Kimchi" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Kimchi Hàn Quốc', 230000, 'Đồ ăn kèm: Khô lạp vị Kimchi là sự kết hợp độc đáo giữa thịt heo tươi, mỡ heo cùng hỗn hợp kimchi lên men từ cải thảo, ớt bột Hàn Quốc, tỏi, gừng và hành lá. Nhờ quá trình lên men tự nhiên, sản phẩm sở hữu vị chua nhẹ đặc trưng hòa quyện cùng vị cay dịu và hương thơm nồng hấp dẫn. Từng miếng khô lạp mang đến cảm giác mới lạ, kích thích vị giác, rất phù hợp cho những ai yêu thích ẩm thực Hàn Quốc.', 'image/kimchi.jpg')">👁️ Xem chi tiết</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(150)</span></div>
-                    <h4>Kimchi Lên Men</h4>
-                    <p class="desc">Phần ăn kèm - Chua cay giòn rụm</p>
-                    <div class="price-row">
-                        <p class="price">230,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Kimchi Lên Men', 230000, 'image/kimchi.jpg')">🛒</button>
-                    </div>
-                </div>
-            </div>
-<div class="product-card" data-category="an-kem">
-    <div class="img-wrapper">
-        <img src="image/dua-chua.jpg" alt="Dưa leo muối" class="product-img">
-        <div class="quick-action">
-            <button onclick="openModal('Dưa Leo Muối', 235000, 'Đồ ăn kèm:sự kết hợp độc đáo giữa thịt heo tươi, mỡ heo cùng hỗn hợp kimchi lên men từ cải thảo, ớt bột Hàn Quốc, tỏi, gừng và hành lá. Nhờ quá trình lên men tự nhiên, sản phẩm sở hữu vị chua nhẹ đặc trưng hòa quyện cùng vị cay dịu ', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
-        </div>
-    </div>
-    <div class="product-info">
-        <div class="stars">★★★★☆ <span>(68)</span></div>
-        <h4>Dưa Leo Muối</h4>
-        <p class="desc">Phần ăn kèm - Giòn mát dễ ăn</p>
-        <div class="price-row">
-            <p class="price">235,000đ</p>
-            <button class="btn-cart-icon" onclick="addToCart('Dưa Leo Muối', 235000, 'image/dua-chua.jpg')">🛒</button>
-        </div>
-    </div>
-</div>
-
-<div class="product-card" data-category="an-kem">
-    <div class="img-wrapper">
-        <img src="image/dua-chua.jpg" alt="Ớt muối" class="product-img">
-        <div class="quick-action">
-            <button onclick="openModal('Ớt Muối Tây Bắc', 240000, 'Đồ ăn kèm: Ớt Ớt muối Tây Bắc cay nồng đặc trưng, kết hợp cùng muối, tỏi và gia vị vùng cao. Hương vị đậm đà, kích thích vị giác, rất phù hợp ăn kèm khô lạp hoặc các món nướng.', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
-        </div>
-    </div>
-    <div class="product-info">
-        <div class="stars">★★★★★ <span>(112)</span></div>
-        <h4>Ớt Muối Tây Bắc</h4>
-        <p class="desc">Phần ăn kèm - Cay nồng đậm vị</p>
-        <div class="price-row">
-            <p class="price">240,000đ</p>
-            <button class="btn-cart-icon" onclick="addToCart('Ớt Muối Tây Bắc', 240000, 'image/dua-chua.jpg')">🛒</button>
-        </div>
-    </div>
-</div>
-            <div class="product-card" data-category="an-kem">
-                <div class="img-wrapper">
-                    <img src="image/dua-chua.jpg" alt="Dưa chua" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Dưa chua', 250000, 'Đồ ăn kèm:Dưa leo muối giòn mát, được ngâm cùng tỏi và gia vị tự nhiên, mang đến vị chua nhẹ thanh dịu. Thích hợp ăn kèm khô lạp, giúp cân bằng vị béo và tạo cảm giác ngon miệng hơn.', 'image/dua-chua.jpg')">👁️ Xem chi tiết</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★☆ <span>(77)</span></div>
-                    <h4>Dưa Chua Truyền Thống</h4>
-                    <p class="desc">Phần ăn kèm - Giải ngấy tuyệt hảo</p>
-                    <div class="price-row">
-                        <p class="price">250,000đ</p>
-                        <button class="btn-cart-icon" onclick="addToCart('Dưa Chua Truyền Thống', 250000, 'image/dua-chua.jpg')">🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card gift-card" data-category="qua-tang">
-                <div class="card-badges"><span class="badge badge-hot">PREMIUM</span></div>
-                <div class="img-wrapper">
-                    <img src="image/anh_box_qua.jpg" alt="Box quà tặng" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Box Quà Tặng Đặc Biệt', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng dành cho các công ty đối tác, biếu người lớn. Khách hàng được chọn từ 2-5 topping đi kèm.', 'image/anh_box_qua.jpg')">👁️ Xem chi tiết</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(55)</span></div>
-                    <h4>Set Quà Tặng Sang Trọng</h4>
-                    <p class="desc">Hộp gỗ cao cấp - Tùy chọn 5 món</p>
-                    <div class="price-row">
-                        <p class="price">1,500,000đ</p>
-                        <button class="btn-primary" onclick="addToCart('Set Quà Tặng Sang Trọng', 1500000, 'image/anh_box_qua.jpg')">MUA BOX NÀY</button>
-                    </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn...">
+                    <button>ĐĂNG KÝ</button>
                 </div>
             </div>
             
-            <div class="product-card gift-card" data-category="qua-tang">
-                <div class="img-wrapper">
-                    <img src="image/anh_box_signature.jpg" alt="Box quà tặng" class="product-img">
-                    <div class="quick-action">
-                        <button onclick="openModal('Box Quà Tặng Signature', 1500000, 'Box đồ ăn với kiểu dáng sang trọng, phù hợp với việc làm quà tặng nhỏ. Khách hàng được chọn 3 món khô lạp và không có topping đi kèm.', 'image/anh_box_signature.jpg')">👁️ Xem chi tiết</button>
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <h2 class="logo" style="margin-bottom: 15px; color:#fff;">TROUW.</h2>
+                    <p>Tự hào mang tinh hoa ẩm thực vùng cao Việt Nam vươn tầm thế giới qua từng mẻ khô lạp trâu đậm đà.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TT</a>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★ <span>(42)</span></div>
-                    <h4>Set Quà Signature</h4>
-                    <p class="desc">Hộp giấy cứng - 3 món đặc trưng</p>
-                    <div class="price-row">
-                        <p class="price">1,500,000đ</p>
-                        <button class="btn-primary" onclick="addToCart('Set Quà Signature', 1500000, 'image/anh_box_signature.jpg')">MUA BOX NÀY</button>
-                    </div>
+                <div class="footer-col">
+                    <h3>Về TROUW</h3>
+                    <ul>
+                        <li><a href="#about">Câu chuyện thương hiệu</a></li>
+                        <li><a href="#">Quy trình sản xuất</a></li>
+                        <li><a href="#">Trách nhiệm xã hội (CSR)</a></li>
+                        <li><a href="#">Cơ hội nghề nghiệp</a></li>
+                    </ul>
                 </div>
-            </div>
+                <div id="contact-popup" class="contact-popup">
+        <div class="contact-box">
+            <span class="close-contact" onclick="toggleContact()">&times;</span>
+            <h3>Thông tin liên hệ</h3>
+            <p><strong>📍 Địa chỉ:</strong> 123 Đường Bã Mía, Q3, TP.HCM</p>
+            <p><strong>📞 Hotline:</strong> 0909 123 456</p>
+            <p><strong>✉️ Email:</strong> hello@trouw.vn</p>
+            <p><strong>🕒 Giờ mở cửa:</strong> 08:00 - 20:00</p>
         </div>
-    </section>
-
-    <section class="section-container bg-pattern">
-        <div class="title-wrapper">
-            <h2 class="section-title">Khách Hàng Đánh Giá</h2>
-            <p class="section-subtitle">Niềm tự hào của chúng tôi là sự hài lòng của bạn</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testi-card">
-                <div class="quote-mark">"</div>
-                <p class="testi-text">Mình đã mua set quà tặng biếu đối tác dịp lễ, ai cũng khen nức nở. Bao bì cực kỳ sang trọng, thịt trâu dai ngọt, vị chẩm chéo thì không chê vào đâu được!</p>
-                <div class="testi-author">
-                    <h5>Anh Thiên Bình</h5>
-                    <span>Giám đốc KD, TP.HCM</span>
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="quote-mark">"</div>
-                <p class="testi-text">Thích nhất là cái vị khô trâu phô mai, ăn lạ miệng mà rất dính. Điểm cộng lớn cho việc dùng bao bì bã mía thân thiện với môi trường. Sẽ ủng hộ lâu dài.</p>
-                <div class="testi-author">
-                    <h5>Chị Lan Chi</h5>
-                    <span>Nhân viên Văn phòng</span>
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="quote-mark">"</div>
-                <p class="testi-text">Nước mắm tỏi ớt pha kẹo kẹo rất vừa miệng, ăn chung với khô lạp hay cơm trắng đều ngon. Giao hàng ở Sài Gòn rất nhanh gọn, đóng gói cẩn thận.</p>
-                <div class="testi-author">
-                    <h5>Chú Hoàng Thái</h5>
-                    <span>Quận 3, TP.HCM</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section-container">
-        <div class="title-wrapper">
-            <h2 class="section-title">Blog</h2>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Giá trị cốt lõi  <span>+</span></div>
-                <div class="faq-answer">
-                    <p>Tại TROUW, chúng tôi tin rằng một sản phẩm ngon phải bắt đầu từ sự chân thật.
-Chúng tôi chọn lọc nguyên liệu kỹ lưỡng, giữ trọn hương vị khô lạp trâu truyền thống và nói không với những thỏa hiệp làm giảm chất lượng. Mỗi miếng khô không chỉ là một món ăn, mà còn là sự cam kết về sự chỉn chu và trung thực.
-TROUW hướng đến việc mang lại trải nghiệm đơn giản nhưng đáng nhớ – từ hương vị đến cách bạn thưởng thức cùng bạn bè và người thân.
-Không chạy theo số lượng, TROUW chọn làm tốt từng sản phẩm. Vì chúng tôi tin rằng giá trị thật sẽ luôn được cảm nhận rõ ràng nhất qua từng lần thưởng thức.
-</p>
-                </div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Cột mốc hoạt động <span>+</span></div>
-                <div class="faq-answer">
-                    <p>TROUW tin vào sự chân thật trong từng sản phẩm. Khô lạp trâu được làm từ nguyên liệu chọn lọc, giữ vị truyền thống và không thỏa hiệp với chất lượng.
-Cột mốc:
-Bắt đầu từ ý tưởng làm khô lạp trâu “đúng vị”
-
-
-Hoàn thiện công thức qua nhiều thử nghiệm
-
-
-Ra mắt và đến tay khách hàng
-
-
-Tiếp tục cải tiến, giữ vững chất lượng
-
-
-TROUW chọn làm tốt từng sản phẩm, để mỗi lần thưởng thức đều đáng nhớ.
-</p>
-                </div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Ý tưởng hình thành khô lạp TROUW <span>+</span></div>
-                <div class="faq-answer">
-                    <p>TROUW bắt đầu từ một suy nghĩ rất đơn giản: làm ra khô lạp trâu đúng vị – ngon, sạch và đáng tin.
-Giữa thị trường nhiều lựa chọn, chúng tôi nhận ra rằng không phải sản phẩm nào cũng giữ được sự ổn định về chất lượng và hương vị. Từ đó, TROUW ra đời với mong muốn mang đến một phiên bản khô lạp trâu được làm chỉn chu hơn – từ nguyên liệu đến cách chế biến.
-Không cầu kỳ, không phô trương, TROUW tập trung vào điều cốt lõi: tạo ra một món ăn mà bạn có thể tin tưởng và muốn quay lại nhiều lần.
-</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-newsletter">
-            <div class="newsletter-content">
-                <h3>Đăng ký nhận Ưu Đãi</h3>
-                <p>Nhận ngay mã giảm giá 10% cho đơn hàng đầu tiên khi đăng ký bản tin.</p>
-            </div>
-            <div class="newsletter-form">
-                <input type="email" placeholder="Nhập email của bạn...">
-                <button>ĐĂNG KÝ</button>
-            </div>
-        </div>
-        
-        <div class="footer-grid">
-            <div class="footer-col brand-col">
-                <h2 class="logo" style="margin-bottom: 15px; color:#fff;">TROUW.</h2>
-                <p>Tự hào mang tinh hoa ẩm thực vùng cao Việt Nam vươn tầm thế giới qua từng mẻ khô lạp trâu đậm đà.</p>
-                <div class="social-links">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">TT</a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Về TROUW</h3>
-                <ul>
-                    <li><a href="#about">Câu chuyện thương hiệu</a></li>
-                    <li><a href="#">Quy trình sản xuất</a></li>
-                    <li><a href="#">Trách nhiệm xã hội (CSR)</a></li>
-                    <li><a href="#">Cơ hội nghề nghiệp</a></li>
-                </ul>
-            </div>
-            <div id="contact-popup" class="contact-popup">
-    <div class="contact-box">
-        <span class="close-contact" onclick="toggleContact()">&times;</span>
-        <h3>Thông tin liên hệ</h3>
-        <p><strong>📍 Địa chỉ:</strong> 123 Đường Bã Mía, Q3, TP.HCM</p>
-        <p><strong>📞 Hotline:</strong> 0909 123 456</p>
-        <p><strong>✉️ Email:</strong> hello@trouw.vn</p>
-        <p><strong>🕒 Giờ mở cửa:</strong> 08:00 - 20:00</p>
     </div>
-</div>
-            <div class="footer-col">
-                <h3>Chính Sách</h3>
-                <ul>
-                    <li><a href="#">Chính sách giao hàng</a></li>
-                    <li><a href="#">Đổi trả & Hoàn tiền</a></li>
-                    <li><a href="#">Chính sách đại lý sỉ</a></li>
-                    <li><a href="#">Bảo mật thông tin</a></li>
-                </ul>
+                <div class="footer-col">
+                    <h3>Chính Sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Đổi trả & Hoàn tiền</a></li>
+                        <li><a href="#">Chính sách đại lý sỉ</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên Hệ</h3>
+                    <ul class="contact-info">
+                        <li><strong>📍 Địa chỉ:</strong> 123 Đường Bã Mía, Q3, TP.HCM</li>
+                        <li><strong>📞 Hotline:</strong> 0909 123 456 (Zalo)</li>
+                        <li><strong>✉️ Email:</strong> hello@trouw.vn</li>
+                        <li><strong>🕒 Mở cửa:</strong> 08:00 - 20:00 Hàng ngày</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Liên Hệ</h3>
-                <ul class="contact-info">
-                    <li><strong>📍 Địa chỉ:</strong> 123 Đường Bã Mía, Q3, TP.HCM</li>
-                    <li><strong>📞 Hotline:</strong> 0909 123 456 (Zalo)</li>
-                    <li><strong>✉️ Email:</strong> hello@trouw.vn</li>
-                    <li><strong>🕒 Mở cửa:</strong> 08:00 - 20:00 Hàng ngày</li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TROUW CORP. All rights reserved.</p>
+                <div class="payment-methods">
+                    <span>VISA</span> | <span>MasterCard</span> | <span>Momo</span> | <span>COD</span>
+                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 TROUW CORP. All rights reserved.</p>
-            <div class="payment-methods">
-                <span>VISA</span> | <span>MasterCard</span> | <span>Momo</span> | <span>COD</span>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="script.js"></script>
+    </body>
+    </html>
